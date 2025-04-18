@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+@plugin 'tailwindcss-motion';
+
+@theme {
+	--color-primary: #ec2afe;
+	--color-secondary: #2b31ae;
+	--color-tertiary: #7a2c9e;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+}
+
+body {
+	color: white;
+	background: linear-gradient(
+		200.96deg,
+		var(--color-primary) -29.09%,
+		var(--color-secondary) 51.77%,
+		var(--color-tertiary) 129.35%
+	);
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}

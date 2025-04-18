@@ -1,0 +1,30 @@
+appId: com.spectravert.app
+productName: Spectravert
+copyright: Copyright © 2024 Jay Simons
+directories:
+    output: dist
+    buildResources: assets
+files:
+    - .vite/**/*
+    - dist/**/*
+    - package.json
+mac:
+    category: public.app-category.utilities
+    target:
+        - dmg
+        - zip
+    icon: assets/icon.icns
+dmg:
+    icon: assets/icon.icns
+    iconSize: 128
+    window:
+        width: 540
+        height: 400
+    contents:
+        - x: 130
+          y: 220
+          type: file
+        - x: 410
+          y: 220
+          type: link
+          path: /Applications
