@@ -44,16 +44,15 @@ const config: ForgeConfig = {
 		appCategoryType: 'utility',
 		appCopyright: `Copyright © ${new Date().getFullYear()} Jay Simons`,
 		executableName: 'spectravert2',
-		icon: path.join(__dirname, 'assets', 'icon.icns'),
+		icon: path.join(
+			__dirname,
+			'assets',
+			platform === 'win32' ? 'icon.ico' : 'icon.icns',
+		),
 		extraResource: getExecutablePaths(),
 	},
 	rebuildConfig: {},
-	makers: [
-		new MakerSquirrel({}),
-		new MakerZIP({}, ['darwin']),
-		new MakerRpm({}),
-		new MakerDeb({}),
-	],
+	makers: [new MakerZIP({}, ['win32', 'darwin']), new MakerRpm({}), new MakerDeb({})],
 	plugins: [
 		new VitePlugin({
 			// `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.
